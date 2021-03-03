@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> NEUB Semester Fee Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #Calculator button{
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+
+</head>
+<body class="bg-light">
+    <header class="d-flex justify-content-center my-3">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <button id="NeubSemesterFeeNav" class="btn btn-outline-success mx-1" type="button">NEUB Corner</button>
+              <button id="CalculatorNav" class="btn btn-outline-success mx-1" type="button">Calculator</button>
+            </form>
+          </nav>
+    </header>
+
+
+    <div class="container my-3" id="NeubSemesterFee">
+        <h3 class="text-center p-3">NEUB Semester Fee Calculator</h3>
+        <div class="row justify-content-between">
+            <div class="rounded col-md-4 bg-success shadow p-4 my-3 text-white d-flex justify-content-center align-items-center text-center">
+                <div>
+                    <h4>Total Amount</h4>
+                    <h1 id="totalAmount" class="display-4" style="font-weight: 400;">00</h1>
+                </div>
+            </div>
+
+            <div class="rounded col-md-7 shadow  p-4 my-3">
+                <div>
+                    <div  class="my-3">
+                        <select class="form-control" style="font-weight: 500;" name="" id="department">
+                            <option value="default">Select Department</option>
+                            <option value="CSE">CSE</option>
+                            <option value="BBA">BBA</option>
+                            <option value="English">BA (English)</option>
+                            <option value="LLB">LLB</option>
+                            <option value="BSS">BSS (Sociology) </option>
+                        </select>
+                    </div>
+                    <div class="my-3">
+                        <h6>Total Credit (Regular)</h6>
+                        <input class="form-control" type="text" name="" id="totalCreditRegular" >
+                    </div>
+                   
+                    <div class="my-3">
+                        <h6>Waiver (%)- (Regular)</h6>
+                        <input class="form-control" type="text" name="" id="waiverRegular" >
+                    </div>
+    
+        
+                    <div class="my-3">
+                        <h6>Total Credit (Retake)</h6>
+                        <input class="form-control" type="text" name="" id="totalCreditRetake" >
+                    </div>
+    
+                    <div class="my-3">
+                        <h6>Waiver (%)- (Retake)</h6>
+                        <input class="form-control" type="text" name="" id="WaiverRetake">
+                    </div>
+                    
+                    <div class="mt-4 d-flex justify-content-center">
+                        <input id="get" class=" mx-2 btn btn-primary" style="width: 120px;" type="submit" value="GET"> 
+                        <input id="reset" class=" mx-2 btn btn-primary" style="width: 120px;" type="submit" value="RESET"> 
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div  class="rounded my-3 d-flex justify-content-center">
+        <div id="Calculator"  style="display: none!important;" class="">
+            <h3 class="text-center p-3">Calculator</h3>
+            <h3 id="calDisplay" class="bg-light text-right border rounded my-3 p-2" style="height: 50px;"></h3>
+            <div class=" py-1">
+                <button class="btn btn-dark calButton" id="0">0</button> 
+                <button class="btn btn-dark calButton" id="1">1</button>   
+                <button class="btn btn-dark calButton" id="2">2</button>   
+                <button class="btn btn-dark calButton" id="3">3</button>   
+            </div>
+            <div class=" py-1 ">
+                <button class="btn btn-dark calButton" id="4">4</button>  
+                <button class="btn btn-dark calButton" id="5">5</button> 
+                <button class="btn btn-dark calButton" id="6">6</button>   
+                <button class="btn btn-dark calButton" id="7">7</button>   
+            </div>
+            <div class=" py-1">
+                <button class="btn btn-dark calButton" id="8">8</button> 
+                <button class="btn btn-dark calButton" id="9">9</button>   
+                <button class="btn btn-dark calButton" id=".">.</button>   
+                <button class="btn btn-dark " id="+">+</button>   
+            </div>
+            <div class=" py-1">
+                <button class="btn btn-dark " id="-">-</button>   
+                <button class="btn btn-dark " id="*">*</button>   
+                <button class="btn btn-dark " id="/">/</button>   
+                <button class="btn btn-dark " id="C">C</button> 
+            </div>
+            <div class=" py-1">
+                <button class="btn btn-dark " style="width: 105px;"  id="+/-">+/-</button>   
+                <button class="btn btn-dark " style="width: 105px;" id="=">=</button> 
+            </div>
+        </div>
+    </div>
+
+   
+
+    <footer class="text-muted text-center"> <small > &copy; <a class="text-muted" href="https://www.facebook.com/sajibsd013" target="_blank">Sajib Sutradhar</a>. All rights reserved.</small></footer>
+
+    	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  	<script src="js/script.js"></script>
+</body>
+</html>
